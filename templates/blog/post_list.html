@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{%extends 'blog/base.html'%}
+{%block title_block%}Praveen's Blog Homepage{%endblock%}
+    {%block content%}
+      <h1>Praveen's Blog </h1>
+       {%for post in post_list%}
+        <a href="{{post.get_abolute_url}}"><h2>{{post.title}}</h2></a>
+        <p id="date">Published on {{post.publish}}by {{post.author|title}}</p>
+        {{post.body|truncatewords:30|linebreaks }}    
+            {%endfor%}
+{%endblock%}
